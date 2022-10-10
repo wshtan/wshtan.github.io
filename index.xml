@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PS (TAT)</title>
+    <link>https://wshtan.github.io/</link>
+    <description>Recent content on PS (TAT)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 2022 - wshtan | Theme: Kiera</copyright>
+    <lastBuildDate>Thu, 06 Oct 2022 01:00:00 -0700</lastBuildDate><atom:link href="https://wshtan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>https://wshtan.github.io/posts/hello-world/</link>
+      <pubDate>Thu, 06 Oct 2022 01:00:00 -0700</pubDate>
+      
+      <guid>https://wshtan.github.io/posts/hello-world/</guid>
+      <description>This is the first testing post.
+Note that this blog will be rarely maintained.</description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>https://wshtan.github.io/links/</link>
+      <pubDate>Thu, 06 Oct 2022 01:00:00 -0700</pubDate>
+      
+      <guid>https://wshtan.github.io/links/</guid>
+      <description>No links yet.</description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>https://wshtan.github.io/hello/</link>
+      <pubDate>Tue, 21 Apr 2020 16:37:47 -0700</pubDate>
+      
+      <guid>https://wshtan.github.io/hello/</guid>
+      <description>Hello. This is my blog where I would post notes on Probability, Statistics, and Data Science.</description>
+    </item>
+    
+  </channel>
+</rss>

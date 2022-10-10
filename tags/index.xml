@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on PS (TAT)</title>
+    <link>https://wshtan.github.io/tags/</link>
+    <description>Recent content in Tags on PS (TAT)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 2022 - wshtan | Theme: Kiera</copyright>
+    <lastBuildDate>Thu, 06 Oct 2022 01:00:00 -0700</lastBuildDate><atom:link href="https://wshtan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>meta</title>
+      <link>https://wshtan.github.io/tags/meta/</link>
+      <pubDate>Thu, 06 Oct 2022 01:00:00 -0700</pubDate>
+      
+      <guid>https://wshtan.github.io/tags/meta/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
