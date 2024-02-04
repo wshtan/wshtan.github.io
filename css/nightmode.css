@@ -1,0 +1,12 @@
+body.nightmode {
+	background: #111;
+	color: #bbb;
+}
+
+.nightmode a {
+	color: #6cf;
+}
+
+.nightmode blockquote {
+	background: #333;
+}

@@ -1,0 +1,273 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Random Walker!</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Weishu Tan" />
+  <meta name="generator" content="Hugo 0.121.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://wshtan.github.io/css/styles.css" />
+
+
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+        <a href="https://wshtan.github.io/">Random Walker!</a>
+      </h1>
+
+      <ul id="social-media">
+          
+        <li><a href="https://github.com/wshtan"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+           
+      </ul>
+      
+      <p><em id="Tagline" style="cursor:pointer;">In solitude, where we are least alone.</em></p>
+      
+      <script>
+      
+      var externalTaglines = ["In solitude, where we are least alone.","The day before yesterday I saw a rabbit, and yesterday I saw a deer, and today, you.","By always thinking unto them.","If we wish to count lines of code, we should not regard them as “lines produced” but as “lines spent”."];
+      
+
+      function randomSelectTaglines(e) {
+        if (e && e.preventDefault) {
+          e.preventDefault();
+        }
+        document.getElementById('Tagline').textContent = externalTaglines[Math.floor(Math.random() * externalTaglines.length)];
+      };
+
+      (function () {
+        randomSelectTaglines();
+        document.getElementById('Tagline').addEventListener('click', randomSelectTaglines);
+      })();
+
+      </script>
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="active" href="https://wshtan.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wshtan.github.io/hello/">
+                <i class="fa-li fa  fa-lg"></i><span>Hello</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wshtan.github.io/links/">
+                <i class="fa-li fa  fa-lg"></i><span>Links</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wshtan.github.io/tags/index.html">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>MyDRP2024 (2A) Notes on Boltzmann Distribution</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2024-01-17T06:00:00-07:00">Jan 17, 2024</time>
+        </li>
+
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://wshtan.github.io/tags/pstat/">#pstat</a>
+                
+                    , 
+                    <a href="https://wshtan.github.io/tags/statmech/">#statmech</a>
+                
+                    , 
+                    <a href="https://wshtan.github.io/tags/drp2024/">#drp2024</a>
+                
+            </em>
+        </li>
+        
+
+        <li>3 min read</li>
+    </ul>
+</aside>
+
+
+    
+
+	
+
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+
+		<script type='text/x-mathjax-config'>
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			},
+				TeX: {
+						equationNumbers: {
+							autoNumber: "AMS"
+						}
+				}
+		});
+		</script>
+	
+
+    <p><strong>Summary</strong>: This post derives Boltzmann distribution on a system having
+finitely many states.</p>
+<p>Suppose a system has finitely many, say $n$, states; each having an energy
+level $E_i$ for $i = 1, 2, \dots, n$. Suppose these energy levels are arranged
+from low to high (i.e., $E_1 &lt; E_2 &lt; \cdots &lt; E_n$).  Now we want to find a
+probability distribution $p_1^\ast, p_2^\ast, \dots, p_n^\ast$ such that its
+entropy, $S(p_1^\ast, \dots, p_n^\ast) := -k_B \cdot \sum_{i=1}^{n} p_i^\ast
+\ln p_i^\ast$, is maximized, and the average energy of the system is
+fixed (i.e., $p_1^\ast E_1 + \cdots + p_n^\ast E_n = U$ where $U$ is a constant).</p>
+<p>Mathematically speaking, we want to find $n$ numbers, $p_1^\ast, p_2^\ast,
+\dots, p_n^\ast \in [0,1]$ such that the following three conditions are
+satisfied:</p>
+<ol>
+<li>$p_1^\ast + \cdots + p_n^\ast = 1$;</li>
+<li>$p_1^\ast E_1 + \cdots + p_n^\ast E_n = U$, where $E_1, \dots, E_n$ and $U$
+are knwon constants with $E_1 &lt; E_2 &lt; \cdots &lt; E_n$;</li>
+<li>The quantity $S(p_1^\ast, \dots, p_n^\ast) := -k_B \cdot \sum_{i=1}^{n}
+p_i^\ast \ln p_i^\ast$ is maximized, where $k_B$ is a constant.</li>
+</ol>
+<p>Notice that this is an optimization problem with 2 constrains. To find
+$p_1^\ast,\dots,p_n^\ast$, we can use
+<a href="https://en.wikipedia.org/wiki/Lagrange_multiplier">the method of Lagrange multipliers</a>.
+Let</p>
+<p>$$
+L(p_1,\dots,p_n,\lambda_1,\lambda_2)
+:= S(p_1,\dots,p_n)
++ \lambda_1 \left( 1 - \sum_{i=1}^{n} p_i \right) \\
++ \lambda_2 \left( U - \sum_{i=1}^{n}p_i E_i \right)
+$$</p>
+<p>for all $p_1, \dots, p_n, \lambda_1, \lambda_2 \in \mathbb{R}$. Let $\lambda_1^\ast$ and $\lambda_2^\ast$ be the numbers such that:</p>
+<p>$$
+\frac{\partial L(p_1,\dots,p_n,\lambda_1,\lambda_2)}{\partial \lambda_1} \bigg|_{\lambda_1 = \lambda_1^\ast} = 0
+$$</p>
+<p>$$
+\frac{\partial L(p_1,\dots,p_n,\lambda_1,\lambda_2)}{\partial \lambda_2} \bigg|_{\lambda_2 = \lambda_2^\ast} = 0
+$$</p>
+<p>(i.e., the vector $(p_1^\ast,\dots, p_n^\ast, \lambda_1^\ast, \lambda_2^\ast)$)
+is a <a href="https://en.wikipedia.org/wiki/Stationary_point">stationary point</a> for the function $L$)</p>
+<p>Unpacking $S(p_1,\dots,p_n)$ yields:</p>
+<p>$$
+L(p_1,\dots,p_n,\lambda_1,\lambda_2)
+= -k_B \sum_{i=1}^{n} p_i \ln p_i
++ \lambda_1 \left( 1 - \sum_{i=1}^{n} p_i \right) \\
++ \lambda_2 \left( U - \sum_{i=1}^{n}p_i E_i \right)
+$$</p>
+<p>Then, for each $i = 1, \dots, n$, we have:</p>
+<p>$$
+\frac{\partial L(p_1,\dots,p_n,\lambda_1,\lambda_2)}{\partial p_i} = -k_B \left( \ln p_i + 1 \right) - \lambda_1 - \lambda_2 E_i
+$$</p>
+<p>Also, by the property of Lagrange multiplier, for each $i = 1, \dots, n$, the desired $p_i^\ast$ satisfies:</p>
+<p>$$
+\left. \frac{\partial L(p_1,\dots,p_n,\lambda_1,\lambda_2)}{\partial p_i} \right|_{\substack{p_i = p_i^\ast} \\ {\lambda_1 = \lambda_1^\ast} \\ {\lambda_2 = \lambda_2^\ast}} = 0
+$$</p>
+<p>Then, for each $i = 1, \dots, n$:</p>
+<p>$$
+-k_B \left( \ln p_i^\ast + 1 \right) - \lambda_1^\ast - \lambda_2^\ast E_i = 0
+$$</p>
+<p>That is, for each $i = 1, \dots, n$:</p>
+<p>$$
+p_i^\ast = \exp \left( -\frac{k_B + \lambda_1^\ast + \lambda_2^\ast E_i}{k_B} \right)
+$$</p>
+<p>We can remove $\lambda_1^\ast$ from the above expression as follows: For each $i = 1, \dots, n$:</p>
+<p>$$
+p_i^\ast = \underbrace{\exp \left( -\frac{k_B + \lambda_1^\ast}{k_B} \right)}_{\text{the normalizing constant}} \cdot \exp \left( -\frac{\lambda_2^\ast E_i}{k_B} \right)
+$$</p>
+<p>That is, for each $i = 1, \dots, n$:</p>
+<p>$$
+p_i^\ast \propto \exp \left( -\frac{\lambda_2^\ast E_i}{k_B} \right)
+$$</p>
+<p>Since $p_1, \dots, p_n$ are probabilities, they need to sum up to 1. That is, for each $i = 1, \dots, n$:</p>
+<p>$$
+p_i^\ast = \frac{ \exp \left( -\frac{\lambda_2^\ast E_i}{k_B} \right) }{ \sum_{j=1}^{n} \exp \left( -\frac{\lambda_2^\ast E_j}{k_B} \right) }
+$$</p>
+<p>The quantity $\lambda_2^\ast$ has a physical meaning. In fact, $\lambda_2^\ast
+= 1/T$ where $T$ is the temperature of the system (I don&rsquo;t know what this means).</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>If $n=2$, then the above derivations fail. Because if $n=2$, then $p_1^\ast$ and $p_2^\ast$ are uniquely determined from the constrains.</li>
+<li>How about $n=3$? I don&rsquo;t know.</li>
+</ul>
+<h2 id="references-copied-from">References (copied from):</h2>
+<ul>
+<li>Wikipedia, <a href="https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)">&ldquo;Partition function&rdquo;</a>.
+All I wrote above are copied from the section &ldquo;Classical discrete system&rdquo;!</li>
+<li>Robert P. Dobrow, <a href="https://onlinelibrary.wiley.com/doi/book/10.1002/9781118740712"><em>Introduction to Stochastic Processes With R</em></a>.
+This book is my PSTAT160A/B textbook, and it is freely available on the
+Internet. Cool example 5.8 (page 202, Izing model) in this textbook!</li>
+</ul>
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://wshtan.github.io/posts/note-geometric-random-walk/"><i class="fa fa-chevron-circle-left"></i> Notes on Geometric Random Walk</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+
+    
+
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright © 2024 - wshtan | Theme: Kiera | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://wshtan.github.io/index.xml">Subscribe</a> |
+			<a href="#ElemToggleNightMode" id="ElemToggleNightMode"></a>
+		</h6>
+    </footer>
+</div>
+<script src="https://wshtan.github.io/js/scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Random Walker!</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Weishu Tan" />
+  <meta name="generator" content="Hugo 0.121.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://wshtan.github.io/css/styles.css" />
+
+
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+        <a href="https://wshtan.github.io/">Random Walker!</a>
+      </h1>
+
+      <ul id="social-media">
+          
+        <li><a href="https://github.com/wshtan"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+           
+      </ul>
+      
+      <p><em id="Tagline" style="cursor:pointer;">In solitude, where we are least alone.</em></p>
+      
+      <script>
+      
+      var externalTaglines = ["In solitude, where we are least alone.","The day before yesterday I saw a rabbit, and yesterday I saw a deer, and today, you.","By always thinking unto them.","If we wish to count lines of code, we should not regard them as “lines produced” but as “lines spent”."];
+      
+
+      function randomSelectTaglines(e) {
+        if (e && e.preventDefault) {
+          e.preventDefault();
+        }
+        document.getElementById('Tagline').textContent = externalTaglines[Math.floor(Math.random() * externalTaglines.length)];
+      };
+
+      (function () {
+        randomSelectTaglines();
+        document.getElementById('Tagline').addEventListener('click', randomSelectTaglines);
+      })();
+
+      </script>
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="active" href="https://wshtan.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wshtan.github.io/hello/">
+                <i class="fa-li fa  fa-lg"></i><span>Hello</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wshtan.github.io/links/">
+                <i class="fa-li fa  fa-lg"></i><span>Links</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wshtan.github.io/tags/index.html">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Notes on Geometric Random Walk</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2023-06-08T15:00:00-07:00">Jun 8, 2023</time>
+        </li>
+
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://wshtan.github.io/tags/pstat/">#pstat</a>
+                
+                    , 
+                    <a href="https://wshtan.github.io/tags/stochastic_processes/">#stochastic_processes</a>
+                
+            </em>
+        </li>
+        
+
+        <li>3 min read</li>
+    </ul>
+</aside>
+
+
+    
+
+	
+
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+
+		<script type='text/x-mathjax-config'>
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			},
+				TeX: {
+						equationNumbers: {
+							autoNumber: "AMS"
+						}
+				}
+		});
+		</script>
+	
+
+    <p><strong>Summary</strong>: This post is about geometric random walk.</p>
+<p>Let</p>
+<p>\[
+R_1, R_2, \dots \overset{\text{iid}}{=} \begin{cases}
+u &amp;\text{w.p.} \hspace{1em} p \\
+d &amp;\text{w.p.} \hspace{1em} 1 - p
+\end{cases}
+\]</p>
+<p>be an infinite sequence of i.i.d. random variables, where $u, d$ are constants such that $0 &lt; d &lt; 1 &lt; u$,
+and $p$ is also a constant such that $0 &lt; p &lt; 1$. Let stochastic process $S := \{S_k\}_{k = 0}^{\infty}$ where
+$S_0 = 1$ and</p>
+<p>\[
+S_k = S_0 \cdot \prod_{i = 1}^{k} R_i
+\]</p>
+<p>Then we say that $S$ is a <em>geometric random walk</em> with up rate $u$, down rate $d$, and the probability of going up $p$.</p>
+<p>We can visualize this process using the following diagram:</p>
+<p><img src="https://wshtan.github.io/pics/2023-06-08-grw.png" alt=""></p>
+<p>Now we wish to know the followings:</p>
+<ol>
+<li>The support set of $S_n$, and</li>
+<li>The distribution of $S_n$</li>
+</ol>
+<p>for each $n = 1, 2, \dots$.</p>
+<p>To study the support set of $S_n$, we can look at the above diagram. Let $\text{Supp}(S_n)$ denotes the support set of $S_n$. Then, from the above diagram, we know that:</p>
+<ul>
+<li>$\text{Supp}(S_1) = \{u, d\}$</li>
+<li>$\text{Supp}(S_2) = \{u^2, ud, d^2\}$</li>
+<li>$\text{Supp}(S_3) = \{u^3, u^2d, ud^2, d^3\}$</li>
+<li>&hellip; and so on.</li>
+</ul>
+<p>Therefore:</p>
+<p>\begin{align*}
+\text{Supp}(S_n)
+&amp;= \{u^n, u^{n-1} d, u^{n-2}, d^2, \dots, d^n \} \\
+&amp;= \{u^{n-k} d^k : k = 0, 1, \dots, n\}
+\end{align*}</p>
+<p>for $n = 1, 2, \dots$. The case for $n = 0$ is trivial: $\text{Supp}(S_0) = 1$ since $S_0 = 1$ w.p. 1.</p>
+<p>Now we study the distribution of $S_n$. That is, we wish to express $\mathbb{P}(S_n = u^{n-k} d^k)$ as a function of $n$ and $k$ for each $k = 0, 1, \dots, n$ and each $n = 1, 2, \dots$.</p>
+<p><strong>Proposition (Distribution of $S_n$):</strong> \[
+\mathbb{P}(S_n = u^{n-k} d^k) = {n \choose n-k} p^{n-k} (1 - p)^k
+\]
+for every $k = 0, 1, \dots, n$ and every $n = 1, 2, \dots$.</p>
+<p>Proof: TODO.</p>
+<p><strong>Example:</strong> Suppose we have a magical wallet. At each time step, the wallet would either double it&rsquo;s money inside with probability 1/2, or shrink it&rsquo;s money inside to a half with probability 1/2. In the beginning the pocket has one dollar. Let $S_n$ denote the amount of money inside the wallet (unit = dollat) at time $n$, where $n = 1, 2, \dots$. Compute $\mathbb{P}(S_5 = 8)$.</p>
+<p><em>Solution.</em> Note that $\{S_n\}_{n=0}^{\infty}$ is a geometrcic random walk with up rate $u = 2$, down rate $d = 1/2$, and the probability of going up $p = 1/2$. Solve $8 = u^{n-k} d^k$ for $k$ yielding $k = 1$, i.e., number of up moves = 4, number of down moves = 1. Thus:</p>
+<p>\[
+\mathbb{P}(S_5 = 8) =
+\mathbb{P}[S_5 = 2^{5-1} (1/2)^1] = { 5 \choose 5-1 } (1/2)^{5-1} (1/2)^1 = \frac{5}{32}.
+\]</p>
+<p><strong>Proposition:</strong> The process $S$ is a martingale iff $p = \frac{1-d}{u-d}$.</p>
+<p>Proof: TODO.</p>
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://wshtan.github.io/posts/diagram-maker/"><i class="fa fa-chevron-circle-left"></i> Diagram Maker</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://wshtan.github.io/posts/note-boltzmann-distribution/">MyDRP2024 (2A) Notes on Boltzmann Distribution <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+
+    
+
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright © 2024 - wshtan | Theme: Kiera | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://wshtan.github.io/index.xml">Subscribe</a> |
+			<a href="#ElemToggleNightMode" id="ElemToggleNightMode"></a>
+		</h6>
+    </footer>
+</div>
+<script src="https://wshtan.github.io/js/scripts.js"></script>
+</body>
+
+</html>

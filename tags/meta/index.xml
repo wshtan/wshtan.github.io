@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>meta on Random Walker!</title>
+    <link>https://wshtan.github.io/tags/meta/</link>
+    <description>Recent content in meta on Random Walker!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; 2024 - wshtan | Theme: Kiera</copyright>
+    <lastBuildDate>Wed, 08 Feb 2023 23:00:00 -0700</lastBuildDate>
+    <atom:link href="https://wshtan.github.io/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diagram Maker</title>
+      <link>https://wshtan.github.io/posts/diagram-maker/</link>
+      <pubDate>Wed, 08 Feb 2023 23:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/posts/diagram-maker/</guid>
+      <description>&lt;p&gt;I want to introduce a project I made recently. I made a small program that can help us to draw Markov chain easier. To use it, click the link below:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://wshtan.github.io/diagram-maker/index.html&#34;&gt;https://wshtan.github.io/diagram-maker/index.html&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://wshtan.github.io/posts/hello-world/</link>
+      <pubDate>Thu, 06 Oct 2022 01:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/posts/hello-world/</guid>
+      <description>This is the first testing post.&#xA;Note that this blog will be rarely maintained.</description>
+    </item>
+  </channel>
+</rss>

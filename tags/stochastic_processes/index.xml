@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stochastic_processes on Random Walker!</title>
+    <link>https://wshtan.github.io/tags/stochastic_processes/</link>
+    <description>Recent content in stochastic_processes on Random Walker!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; 2024 - wshtan | Theme: Kiera</copyright>
+    <lastBuildDate>Thu, 08 Jun 2023 15:00:00 -0700</lastBuildDate>
+    <atom:link href="https://wshtan.github.io/tags/stochastic_processes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes on Geometric Random Walk</title>
+      <link>https://wshtan.github.io/posts/note-geometric-random-walk/</link>
+      <pubDate>Thu, 08 Jun 2023 15:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/posts/note-geometric-random-walk/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Summary&lt;/strong&gt;: This post is about geometric random walk.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

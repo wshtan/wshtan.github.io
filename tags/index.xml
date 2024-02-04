@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Random Walker!</title>
+    <link>https://wshtan.github.io/tags/</link>
+    <description>Recent content in Tags on Random Walker!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; 2024 - wshtan | Theme: Kiera</copyright>
+    <lastBuildDate>Wed, 17 Jan 2024 06:00:00 -0700</lastBuildDate>
+    <atom:link href="https://wshtan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>drp2024</title>
+      <link>https://wshtan.github.io/tags/drp2024/</link>
+      <pubDate>Wed, 17 Jan 2024 06:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/tags/drp2024/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pstat</title>
+      <link>https://wshtan.github.io/tags/pstat/</link>
+      <pubDate>Wed, 17 Jan 2024 06:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/tags/pstat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>statmech</title>
+      <link>https://wshtan.github.io/tags/statmech/</link>
+      <pubDate>Wed, 17 Jan 2024 06:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/tags/statmech/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>stochastic_processes</title>
+      <link>https://wshtan.github.io/tags/stochastic_processes/</link>
+      <pubDate>Thu, 08 Jun 2023 15:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/tags/stochastic_processes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>meta</title>
+      <link>https://wshtan.github.io/tags/meta/</link>
+      <pubDate>Wed, 08 Feb 2023 23:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/tags/meta/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

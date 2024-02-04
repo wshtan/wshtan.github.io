@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Random Walker!</title>
+    <link>https://wshtan.github.io/posts/</link>
+    <description>Recent content in Posts on Random Walker!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; 2024 - wshtan | Theme: Kiera</copyright>
+    <lastBuildDate>Wed, 17 Jan 2024 06:00:00 -0700</lastBuildDate>
+    <atom:link href="https://wshtan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MyDRP2024 (2A) Notes on Boltzmann Distribution</title>
+      <link>https://wshtan.github.io/posts/note-boltzmann-distribution/</link>
+      <pubDate>Wed, 17 Jan 2024 06:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/posts/note-boltzmann-distribution/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Summary&lt;/strong&gt;: This post derives Boltzmann distribution on a system having&#xA;finitely many states.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Notes on Geometric Random Walk</title>
+      <link>https://wshtan.github.io/posts/note-geometric-random-walk/</link>
+      <pubDate>Thu, 08 Jun 2023 15:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/posts/note-geometric-random-walk/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Summary&lt;/strong&gt;: This post is about geometric random walk.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Diagram Maker</title>
+      <link>https://wshtan.github.io/posts/diagram-maker/</link>
+      <pubDate>Wed, 08 Feb 2023 23:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/posts/diagram-maker/</guid>
+      <description>&lt;p&gt;I want to introduce a project I made recently. I made a small program that can help us to draw Markov chain easier. To use it, click the link below:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://wshtan.github.io/diagram-maker/index.html&#34;&gt;https://wshtan.github.io/diagram-maker/index.html&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://wshtan.github.io/posts/hello-world/</link>
+      <pubDate>Thu, 06 Oct 2022 01:00:00 -0700</pubDate>
+      <guid>https://wshtan.github.io/posts/hello-world/</guid>
+      <description>This is the first testing post.&#xA;Note that this blog will be rarely maintained.</description>
+    </item>
+  </channel>
+</rss>

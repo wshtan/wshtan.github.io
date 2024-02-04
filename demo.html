@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://unpkg.com/vue@3"></script>
+<script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>
+<style>
+#app {
+	font-size: 18px;
+	width: 100%;
+}
+#stateTable, #stateTable td {
+	border: 1px black solid;
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+	<table id="stateTable">
+		<tr>
+			<td colspan="2">
+				k = {{k}}, n = {{n}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				fastLeft: {{fastLeftCount}}
+			</td>
+			<td>
+				fastRight: {{fastRightCount}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				slowLeft: {{slowLeftCount}}
+			</td>
+			<td>
+				slowRight: {{slowRightCount}}
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				entropy = {{entropy}}
+			</td>
+		</tr>
+	</table>
+	<hr/>
+	<div ref="entropyPathPlot"></div>
+	n = <input type="text" v-model.number="n" /><br/>
+	q = <input type="text" v-model.number="q" /><br/>
+	<button v-show="!isPlaying" @click="resetState">Reset</button>
+	<hr/>
+	<button v-show="!isPlaying" @click="updateState">NextStep</button>
+	<button @click="toggleAutoPlay">{{isPlaying ? 'Stop' : 'AutoPlay'}}</button>
+</div>
+
+<script>
+
+function factorial(n) {
+	let ret = 1;
+	for (let i = 1; i <= n; i++) {
+		ret = ret * i;
+	}
+	return ret;
+}
+
+function comb(n, r) {
+	return factorial(n) / (factorial(r) * factorial(n-r));
+}
+
+const app = Vue.createApp({
+	data() {
+		return ({
+			k: 0,
+			n: 100,
+			q: 0.5,
+			x: 50,
+			particles: [],
+			entropyPath: [],
+			timePath: [],
+			isPlaying: false,
+			intervalId: null,
+		});
+	},
+	mounted() {
+		this.resetState();
+		console.log(this.particles);
+	},
+	computed: {
+		fastCount() {
+			return Math.floor(this.n * this.q);
+		},
+		slowCount() {
+			return Math.floor(this.n * (1 - this.q));
+		},
+		fastLeftCount() {
+			return this.countParticles('fastleft');
+		},
+		fastRightCount() {
+			return this.countParticles('fastright');
+		},
+		slowLeftCount() {
+			return this.countParticles('slowleft');
+		},
+		slowRightCount() {
+			return this.countParticles('slowright');
+		},
+		entropy() {
+			return Math.log(comb(this.fastCount, this.fastLeftCount)) + Math.log(comb(this.slowCount, this.slowLeftCount));
+		}
+	},
+	methods: {
+		resetState() {
+			this.k = 0;
+			this.particles = [];
+			let fastCount = Math.floor(this.n * this.q);
+			let slowCount = this.n - fastCount;
+			for (let i = 0; i < fastCount; i++) {
+				this.particles.push('fastleft');
+			}
+			for (let i = 0; i < slowCount; i++) {
+				this.particles.push('slowleft');
+			}
+			this.entropyPath = [];
+			this.timePath = [];
+		},
+		countParticles(str) {
+			let ret = 0;
+			for (let i = 0; i < this.particles.length; i++) {
+				if (this.particles[i] === str) {
+					ret = ret + 1;
+				}
+			}
+			return ret;
+		},
+		updateState() {
+			let i = Math.floor(Math.random() * this.particles.length);
+			this.particles[i] = ({
+				'fastleft': 'fastright',
+				'fastright': 'fastleft',
+				'slowleft': 'slowright',
+				'slowright': 'slowright',
+			})[this.particles[i]];
+			// Update and render entropyPath:
+			this.entropyPath.push(this.entropy);
+			this.timePath.push(this.k);
+			let plotData = [{
+				x: [ ...this.timePath ],
+				y: [ ...this.entropyPath ],
+				mode: 'lines+markers',
+			}];
+			Plotly.newPlot(this.$refs.entropyPathPlot, plotData);
+
+			this.k = this.k + 1;
+		},
+		playAnimation() {
+			this.intervalId = setInterval(() => {this.updateState()}, 200);
+		},
+		stopAnimation() {
+			clearInterval(this.intervalId);
+		},
+		toggleAutoPlay() {
+			if (this.isPlaying === false) {
+				this.playAnimation();
+				this.isPlaying = true;
+			} else {
+				this.stopAnimation();
+				this.isPlaying = false;
+
+			}
+		}
+	}
+});
+app.mount('#app');
+</script>
+
+</body>
+</html>
